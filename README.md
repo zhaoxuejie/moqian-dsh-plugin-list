@@ -56,7 +56,7 @@ dsh plugin --profile web add link:./<插件目录>
 |---|---|---|---|---|
 | [`dsh-plugin-tool-guard`](#dsh-plugin-tool-guard) | 工具调用安全守卫（危险命令拦截、路径白名单、人工审批、审计） | `1.0.0` | TypeScript | [↗](https://github.com/zhaoxuejie/dsh-plugin-tool-guard) |
 | [`dsh-plugin-log-forwarder`](#dsh-plugin-log-forwarder) | 实时日志转发到 WebSocket / Loki / 本地文件 | `1.0.4` | TypeScript | [↗](https://github.com/zhaoxuejie/dsh-plugin-log-forwarder) |
-| [`dsh-plugin-session-export`](#dsh-plugin-session-export) | 会话黑匣子，导出 Markdown / HTML 复盘报告 | `1.0.0` | JavaScript | [↗](https://github.com/zhaoxuejie/dsh-plugin-session-export) |
+| [`dsh-plugin-session-export`](#dsh-plugin-session-export) | 会话黑匣子，导出 Markdown / HTML 复盘报告 | `1.0.1` | JavaScript | [↗](https://github.com/zhaoxuejie/dsh-plugin-session-export) |
 | [`dsh-plugin-vault-memory`](#dsh-plugin-vault-memory) | 把 Obsidian 知识库变成 Agent 长期记忆与工作台 | `0.3.1` | JavaScript | [↗](https://github.com/zhaoxuejie/dsh-plugin-vault-memory) |
 | [`dsh-plugin-academic-paper`](#dsh-plugin-academic-paper) | 学术文献真实检索与引用格式生成，杜绝编造 | `0.1.2` | TypeScript | [↗](https://github.com/zhaoxuejie/dsh-plugin-academic-paper) |
 | [`dsh-plugin-todo-scanner`](#dsh-plugin-todo-scanner) | 扫描代码 TODO/FIXME，生成结构化清单与「TODO 雷达」面板 | `1.0.0` | TypeScript | [↗](https://github.com/zhaoxuejie/dsh-plugin-todo-scanner) |
