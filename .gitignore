@@ -60,3 +60,8 @@ diagnostics/
 
 # ---- 本地采集产物 ----
 *.jsonl
+
+# ---- 本地 npm 缓存与临时发布目录 ----
+.npm-cache/
+.publish/
+.probe/
