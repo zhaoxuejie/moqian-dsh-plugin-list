@@ -33,10 +33,10 @@ DeepSeek Harness（简称 DSH）以 **「一切皆插件」** 为设计理念。
 所有插件都是 **DSH profile bundle**（不是独立应用），通过 `dsh plugin` 命令装进某个 profile 后由 loader 自动组合生效。GUI 通常使用 `web` profile：
 
 ```bash
-# 从 npm 安装（已发布 npm 的插件）
+# 从 npm 安装（推荐，本清单所有插件均已发布 npm）
 dsh plugin --profile web add <包名>
 
-# 从 GitHub 源码安装（未发布 npm 的插件）
+# 从 GitHub 源码安装（跟随上游最新提交）
 dsh plugin --profile web add github:zhaoxuejie/<仓库名>
 
 # 从本地目录安装（源码调试；link 保持与原目录联动）
@@ -56,13 +56,13 @@ dsh plugin --profile web add link:./<插件目录>
 |---|---|---|---|---|
 | [`dsh-plugin-tool-guard`](#dsh-plugin-tool-guard) | 工具调用安全守卫（危险命令拦截、路径白名单、人工审批、审计） | `1.0.0` | TypeScript | [↗](https://github.com/zhaoxuejie/dsh-plugin-tool-guard) |
 | [`dsh-plugin-log-forwarder`](#dsh-plugin-log-forwarder) | 实时日志转发到 WebSocket / Loki / 本地文件 | `1.0.4` | TypeScript | [↗](https://github.com/zhaoxuejie/dsh-plugin-log-forwarder) |
-| [`dsh-plugin-session-export`](#dsh-plugin-session-export) | 会话黑匣子，导出 Markdown / HTML 复盘报告 | 未发布 | JavaScript | [↗](https://github.com/zhaoxuejie/dsh-plugin-session-export) |
+| [`dsh-plugin-session-export`](#dsh-plugin-session-export) | 会话黑匣子，导出 Markdown / HTML 复盘报告 | `1.0.0` | JavaScript | [↗](https://github.com/zhaoxuejie/dsh-plugin-session-export) |
 | [`dsh-plugin-vault-memory`](#dsh-plugin-vault-memory) | 把 Obsidian 知识库变成 Agent 长期记忆与工作台 | `0.3.1` | JavaScript | [↗](https://github.com/zhaoxuejie/dsh-plugin-vault-memory) |
 | [`dsh-plugin-academic-paper`](#dsh-plugin-academic-paper) | 学术文献真实检索与引用格式生成，杜绝编造 | `0.1.2` | TypeScript | [↗](https://github.com/zhaoxuejie/dsh-plugin-academic-paper) |
 | [`dsh-plugin-todo-scanner`](#dsh-plugin-todo-scanner) | 扫描代码 TODO/FIXME，生成结构化清单与「TODO 雷达」面板 | `1.0.0` | TypeScript | [↗](https://github.com/zhaoxuejie/dsh-plugin-todo-scanner) |
 | [`dsh-plugin-desktop-notice`](#dsh-plugin-desktop-notice) | 任务完成 / 等待输入 / 失败时桌面弹窗提醒 | `0.2.1` | JavaScript | [↗](https://github.com/zhaoxuejie/dsh-plugin-desktop-notice) |
 | [`dsh-plugin-feihualing`](#dsh-plugin-feihualing) | 飞花令对诗游戏（浏览器即时对战 / 对话模式） | `1.1.3` | TypeScript | [↗](https://github.com/zhaoxuejie/dsh-plugin-feihualing) |
-| [`dsh-plugin-internet-meme`](#dsh-plugin-internet-meme) | Web 端热梗弹幕字幕，零侵入的氛围层 | 未发布 | JavaScript | [↗](https://github.com/zhaoxuejie/dsh-plugin-internet-meme) |
+| [`dsh-plugin-internet-meme`](#dsh-plugin-internet-meme) | Web 端热梗弹幕字幕，零侵入的氛围层 | `0.4.4` | JavaScript | [↗](https://github.com/zhaoxuejie/dsh-plugin-internet-meme) |
 | [`dsh-plugin-learning-path`](#dsh-plugin-learning-path) | DSH 插件开发教程：15 节课 + 4 个实战项目 | — | JavaScript | [↗](https://github.com/zhaoxuejie/dsh-plugin-learning-path) |
 
 ---
@@ -116,9 +116,10 @@ dsh plugin --profile web add dsh-plugin-log-forwarder
 **会话黑匣子** —— 以旁路监听方式全量采集每一轮对话的用户输入、模型回复、工具调用与报错，不干预 Agent 正常运行；一键导出美化 Markdown / HTML 复盘报告。
 
 ```bash
-git clone https://github.com/zhaoxuejie/dsh-plugin-session-export.git
-dsh plugin --profile web add link:./dsh-plugin-session-export
+dsh plugin --profile web add dsh-plugin-session-export
 ```
+
+> 也可从源码安装：`git clone https://github.com/zhaoxuejie/dsh-plugin-session-export.git` 后 `dsh plugin --profile web add link:./dsh-plugin-session-export`。
 
 **亮点**
 
@@ -127,7 +128,7 @@ dsh plugin --profile web add link:./dsh-plugin-session-export
 - 快照补录不漏历史对话；`api_key / token / password` 等敏感字段自动掩码
 - 内置 Web 统计面板，右上角一键导出 / 清空
 
-**链接**：[GitHub](https://github.com/zhaoxuejie/dsh-plugin-session-export)
+**链接**：[GitHub](https://github.com/zhaoxuejie/dsh-plugin-session-export) · [npm](https://www.npmjs.com/package/dsh-plugin-session-export)
 
 ---
 
@@ -246,7 +247,7 @@ dsh plugin --profile web add dsh-plugin-feihualing
 给 DeepSeek Harness Web 页面添加一层轻量的「**热梗弹幕**」字幕：Agent 思考、调用工具、工具返回和本轮结束时，右侧显示向上漂移的短句提示。
 
 ```bash
-dsh plugin --profile web add github:zhaoxuejie/dsh-plugin-internet-meme#v0.4.4
+dsh plugin --profile web add dsh-plugin-internet-meme
 ```
 
 **亮点**
@@ -255,7 +256,7 @@ dsh plugin --profile web add github:zhaoxuejie/dsh-plugin-internet-meme#v0.4.4
 - 可自定义主题、颜色、密度与文案，支持可选提示音
 - 提示音只在本地播放，不上传会话文本
 
-**链接**：[GitHub](https://github.com/zhaoxuejie/dsh-plugin-internet-meme) · 标签：[`v0.4.4`](https://github.com/zhaoxuejie/dsh-plugin-internet-meme/releases)
+**链接**：[GitHub](https://github.com/zhaoxuejie/dsh-plugin-internet-meme) · [npm](https://www.npmjs.com/package/dsh-plugin-internet-meme)
 
 ---
 
