@@ -1,0 +1,17 @@
+# 统一换行符：仓库内一律使用 LF，检出到 Windows 时自动转换
+* text=auto eol=lf
+
+# 文本文件显式声明
+*.md   text eol=lf
+*.json text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+
+# 二进制文件不参与换行符转换
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.ico  binary
+*.zip  binary

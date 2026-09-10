@@ -1,0 +1,62 @@
+# ---- 依赖与构建产出 ----
+node_modules/
+pnpm-store/
+.pnpm-store/
+lib/
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# ---- 日志与临时文件 ----
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+tmp/
+temp/
+*.tmp
+*.bak
+_tmp_*
+
+# ---- 环境变量与密钥（切勿入库）----
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.credentials.yaml
+
+# ---- 编辑器 / IDE ----
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+
+# ---- 操作系统 ----
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+desktop.ini
+
+# ---- DSH 本地运行时状态 ----
+.dsh/
+.dsh-market/
+.dsh-module-fallback/
+sessions/
+attachments/
+storages/
+cache/
+crash-evidence/
+diagnostics/
+
+# ---- 本地采集产物 ----
+*.jsonl
